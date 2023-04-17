@@ -1,9 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import MainLayout from "@/layouts/MainLayout";
+import ListOfSigns from "@/components/ListOfSigns";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -14,13 +16,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='bg-neutral w-full h-screen flex items-center justify-center'>
-
-
-        <h1>Next Tailwind DaisyUI</h1>
-
-
-      </main>
+      <MainLayout>
+        <main className="bg-neutral w-full h-full md:w-2/3 lg:md:1/3 mx-auto flex flex-col items-center">
+          <h1 className="text-5xl text-primary-focus mt-4">Oroscopo</h1>
+          <p className="text-xs p-3 text-base-100">clicca sul tuo segno</p>
+          <ListOfSigns></ListOfSigns>
+        </main>
+      </MainLayout>
     </>
-  )
+  );
 }
