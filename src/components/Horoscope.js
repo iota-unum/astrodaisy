@@ -41,7 +41,7 @@ const Horoscope = ({ params, data }) => {
       <MainLayout>
         <div className="flex overflow-hidden w-full :w-2/3 sm:mx-auto">
           <div className="flex w-full h-full justify-center prose prose-sm bg-neutral text-primary sm:mx-auto">
-            <div className="w-full bg-base-100">
+            <div className="w-full h-screen bg-base-100">
               <div className="flex items-baseline justify-between px-2 py-4">
                 <h1 className="text-primary-focus text- m-0">{sign}</h1>
                 {/* <div className="fill-current text-primary-focus w-1/12">
@@ -64,9 +64,9 @@ const Horoscope = ({ params, data }) => {
                   </Link>
                 ))}
               </div>
-              <div className="prose prose-sm p-4 h-5/6 leading-normal text-sm overflow-y-auto">{horoscope}</div>
+              <div className="prose prose-sm p-4 h-[500px] leading-normal text-sm overflow-y-auto">{horoscope}</div>
             </div>
-            <div className="flex flex-col bg-base-300 w-2/12 justify-evenly  h-screen">
+            <div className="flex flex-col bg-base-300 w-2/12 justify-evenly  h-full">
               {zodiacSigns.map((z) => (
                 <Link
                   href={baseLink + z.name}

@@ -1,4 +1,4 @@
-// const today = '2023-04-20'
+// const today = '2023-04-21'
 const today = getNowDateStr()
 console.log('DATESTRING', today)
 
