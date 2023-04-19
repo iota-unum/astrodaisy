@@ -29,7 +29,9 @@ export async function getStaticProps({ params }) {
   console.log('today', tomorrow)
     const data = getJson(tomorrow).filter(s =>(s.sign === params.sign))
     return {
-      props: { params, data}
+      props: { params, data},
+      revalidate: 60*60,
+
     };
 }
 

@@ -33,7 +33,8 @@ const {today} = getTodayYesterdayTomorrow()
 console.log('today', today)
   const data = getJson(today).filter(s =>(s.sign === params.sign))
   return {
-    props: { params, data}
+    props: { params, data}, 
+    revalidate: 60*60,
   };
 }
 
