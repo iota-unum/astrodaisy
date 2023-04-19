@@ -1,12 +1,14 @@
 import React from "react";
-import Horoscope from '../../../components/Horoscope'
 import { useRouter } from "next/router";
 import { zodiacSigns } from "../../../../assets/zodiacSigns";
 import MainLayout from "@/layouts/MainLayout";
+import Horoscope from '../../../components/Horoscope'
+import { getTodayYesterdayTomorrow } from "@/libs/dates";
+import { getJson } from "@/libs/getJson";
 
-const tomorrowPage = ({params}) => {
+const tomorrowPage = ({params, data}) => {
   return (
-   <Horoscope params={params}></Horoscope>
+   <Horoscope params={params} data={data}></Horoscope>
   )
 }
 
@@ -23,7 +25,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  return {
-    props: { params },
-  };
+  const {tomorrow} = getTodayYesterdayTomorrow()
+  console.log('today', tomorrow)
+    const data = getJson(tomorrow).filter(s =>(s.sign === params.sign))
+    return {
+      props: { params, data}
+    };
 }
+
+
+

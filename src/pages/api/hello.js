@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { translate } from "../../../libs/italianTranslation";
+import { translate } from "../../libs/italianTranslation";
 import React from 'react'
 import { zodiacSigns } from "../../../assets/zodiacSigns";
 export default function handler(req, res) {

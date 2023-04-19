@@ -11,7 +11,7 @@ import Sagittarius from '../public/zodiac-icons/sagittarius.svg'
 import Capricorn from '../public/zodiac-icons/capricorn.svg'
 import Aquarius from '../public/zodiac-icons/aquarius.svg'
 import Pisces from '../public/zodiac-icons/pisces.svg'
-import { translate } from '../libs/italianTranslation'
+import { translate } from '../src/libs/italianTranslation'
 
 
 

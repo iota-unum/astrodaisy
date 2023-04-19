@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import { zodiacSigns } from "../../../../assets/zodiacSigns";
 import MainLayout from "@/layouts/MainLayout";
 import Horoscope from '../../../components/Horoscope'
+import { getTodayYesterdayTomorrow } from "@/libs/dates";
+import { getJson } from "@/libs/getJson";
 
-const yesterdayPage = ({params}) => {
+const yesterdayPage = ({params, data}) => {
   return (
-   <Horoscope params={params}></Horoscope>
+   <Horoscope params={params} data={data}></Horoscope>
   )
 }
 
@@ -23,9 +25,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  return {
-    props: { params },
-  };
+  const {yesterday} = getTodayYesterdayTomorrow()
+  console.log('today', yesterday)
+    const data = getJson(yesterday).filter(s =>(s.sign === params.sign))
+    return {
+      props: { params, data}
+    };
 }
 
 
