@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const {yesterday} = getTodayYesterdayTomorrow()
-  console.log('today', yesterday)
+  console.log('yesterday', yesterday)
     const data = getJson(yesterday).filter(s =>(s.sign === params.sign))
     return {
       props: { params, data},

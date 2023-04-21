@@ -66,7 +66,7 @@ const Horoscope = ({ params, data }) => {
               </div>
               <div className="prose prose-sm p-4 h-[500px] leading-normal text-sm overflow-y-auto">{horoscope}</div>
             </div>
-            <div className="flex flex-col bg-base-300 w-2/12 justify-evenly  h-full">
+            <div className="flex flex-col  bg-base-300 w-2/12 justify-start pt-[5%] gap-2 h-full">
               {zodiacSigns.map((z) => (
                 <Link
                   href={baseLink + z.name}
