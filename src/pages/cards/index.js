@@ -6,7 +6,23 @@ const Image = () => {
   const imgRef = useRef();
 
   async function handleImage() {
-    await generateImage(imgRef);
+    try {
+      const dataUrl = await generateImage(imgRef);
+
+      const response = await fetch('/api/saveImage', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ image: dataUrl }),
+      });
+
+      if (response.ok) {
+        console.log('File saved successfully');
+      } else {
+        console.error('An error occurred while saving the file');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
