@@ -1,36 +1,37 @@
 import Head from "next/head";
 import React from "react";
+import { zodiacSigns } from "../../assets/zodiacSigns";
 
-const Card = () => {
+const Card = ({params, data}) => {
+  const {sign, horoscope} = data[0]
+  console.log(sign)
   return (
     <>
       <div className="card">
-        <h1 className="">Toro</h1>
+        <div className="flex">
+        <h1 className="">{sign}</h1>
+    
+        </div>
         <div className="">
           <article className="">
-            Ciao caro Toro, oggi la luna si trova in congiunzione nella tua
-            prima casa portandoti grande energia e vitalità. Tuttavia, ci sono
-            alcune sfide che dovrai affrontare. La quadratura di Plutone
-            potrebbe creare qualche conflitto nel lavoro o nelle relazioni
-            sociali, ma il trigono tra luna e Plutone ti darà la forza per
-            superarli. La quadratura di Saturno può causare delusioni nella
-            sfera emotiva, ma il sestile tra luna e Saturno suggerisce che hai i
-            mezzi per superare queste difficoltà. Infine, il sestile di Nettuno
-            potrebbe renderti più sensibile alle emozioni degli altri, ma
-            ricorda di mantenere anche te stesso al centro delle tue decisioni.
-            In generale, questo è un buon momento per prendersi cura di te
-            stesso fisicamente e mentalmente, senza trascurare le responsabilità
-            sociali e professionali. Buona fortuna!
+            {horoscope}
           </article>
         </div>
         <style jsx>
           {`
-            .card {
-              background-color: red;
-              color: #fff;
-              width: 600px;
-              height: 800px;
-              padding: 2rem;
+          .card {
+              width: 300px;
+              height: 400px;
+              font-family: Helvetica;
+              padding: .7rem;
+              font-size: .75rem;
+              background: gold;
+              color: #222;
+              
+            }
+            h1 {
+              font-size: 2rem;
+              font-weight: bold;
             }
           `}
         </style>

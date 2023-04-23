@@ -1,15 +1,41 @@
-import { toPng } from 'html-to-image';
 
-export async function generateImage(htmlRef) {
-  try {
-    const dataUrl = await toPng(htmlRef.current, { cacheBust: true });
-    // const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
-    // const filePath = 'public/card-images/my-image-name.png';
-    // await fs.promises.mkdir('public/card-images', { recursive: true });
-    // await fs.promises.writeFile(filePath, Buffer.from(base64Data, 'base64'));
-    // return filePath;
-    return dataUrl
-  } catch (error) {
-    console.log(error);
-  }
+
+import Card from '@/components/Card';
+import nodeHtmlToImage from 'node-html-to-image'
+
+
+export default async function generateImage(htmlString) {
+   
+
+
+    try {
+
+      nodeHtmlToImage({
+        output: './public/cards/bimba.png',
+        html: `<html>
+        <head>
+          <style>
+            body {
+              width: 300px;
+              height: 400px;
+              font-family: Helvetica;
+              padding: .7rem;
+              font-size: .8rem;
+              background: gold;
+              color: #222;
+              line-height: 120%;
+              
+            }
+          </style>
+        </head>
+        <body>${htmlString}</body>
+      </html>`
+      })
+        .then(() => console.log('The image was created successfully!'))
+
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
 }
