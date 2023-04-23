@@ -1,7 +1,7 @@
 
 import Card from '@/components/Card';
 import { getTodayYesterdayTomorrow } from '@/libs/dates';
-import generateImage from '@/libs/generateImage';
+import {generateImage} from '@/libs/generateImage';
 import { getJson } from '@/libs/getJson';
 import nodeHtmlToImage from 'node-html-to-image'
 import ReactDOMServer from 'react-dom/server';
