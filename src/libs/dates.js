@@ -1,5 +1,5 @@
-const today = '2023-04-23'
-// const today = getNowDateStr()
+// const today = '2023-04-24'
+const today = getNowDateStr()
 console.log('DATESTRING', today)
 
 export function formatItalianDate(dateStr) {
