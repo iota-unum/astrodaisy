@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 
 import fs from 'fs';
 import React, { useRef } from 'react';
-import { generateImage } from '@/libs/generateImage';
+import generateImage  from '@/libs/generateImage';
 
 const Card = ({ onImageRef }) => {
   const imgRef = useRef();
