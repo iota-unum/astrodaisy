@@ -9,13 +9,14 @@ import { zodiacSigns } from '../../../assets/zodiacSigns';
 
 
 export default async function handler(req, res) {
-    const htmlString = ReactDOMServer.renderToString('<h1>Ciao Mondo!!!</h1>');
-const {today} = getTodayYesterdayTomorrow()
-const signs = await getJson(today)
-    
-    try {
-      for (let sign of signs) {
-       await generateImage(sign.horoscope, sign.sign).then(console.log('IMMAGINE GENERATA'))
+  const {today, yesterday} = getTodayYesterdayTomorrow()
+  const signs = await getJson(yesterday)
+  
+  try {
+    for (let sign of signs) {
+      console.log(sign ,'SEGNO')
+        const htmlString = ReactDOMServer.renderToString(<Card data={sign}/>);
+       await generateImage(htmlString, sign.sign).then(console.log('IMMAGINE GENERATA'))
 
       }
 

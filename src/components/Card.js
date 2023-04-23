@@ -2,9 +2,10 @@ import Head from "next/head";
 import React from "react";
 import { zodiacSigns } from "../../assets/zodiacSigns";
 
-const Card = ({params, data}) => {
-  const {sign, horoscope} = data[0]
-  console.log(sign)
+const Card = ({ data}) => {
+  console.log(data, 'DATA')
+  const {sign, horoscope} = data
+  console.log(data , 'DATA')
   return (
     <>
       <div className="card">
