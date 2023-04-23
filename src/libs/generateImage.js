@@ -4,14 +4,14 @@ import Card from '@/components/Card';
 import nodeHtmlToImage from 'node-html-to-image'
 
 
-export default async function generateImage(htmlString) {
+export default async function generateImage(htmlString, signName) {
    
 
 
     try {
 
       nodeHtmlToImage({
-        output: './public/cards/bimba.png',
+        output: `./public/cards/${signName}.png`,
         html: `<html>
         <head>
           <style>
