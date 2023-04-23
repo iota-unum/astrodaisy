@@ -24,16 +24,21 @@
 
 import { tweetCard } from '@/libs/tweetImage';
 import path from 'path';
+import { zodiacSigns } from '../../../assets/zodiacSigns';
 
 export default async function handler(req, res) {
   try {
+
+for (let sign of zodiacSigns){
+    const tweet = await tweetCard(sign.name)
+
+    console.log("TWEET SENT!!!", tweet);
+}
    
-   const tweet = await tweetCard('pesci')
 
     
 
-    console.log("TWEET SENT!!!", tweet);
-    res.status(200).json({ res: "tweet sent!", tweet });
+    res.status(200).json({ res: "all tweets sent!", });
   } catch (error) {
     console.log(error);
     res.status(400).json({ error });

@@ -11,16 +11,16 @@ export default async function generateImage(htmlString, signName) {
     try {
 
       nodeHtmlToImage({
-        output: `./public/cards/${signName}.png`,
+        output: `./public/cards/${signName}.jpg`,
         html: `<html>
         <head>
           <style>
             body {
-              width: 300px;
-              height: 400px;
+              width: 900px;
+              height: 1200px;
               font-family: Helvetica;
-              padding: .7rem;
-              font-size: .8rem;
+              padding: 3rem;
+              font-size: 2.5rem;
               background: gold;
               color: #222;
               line-height: 120%;

@@ -10,7 +10,7 @@ import { zodiacSigns } from '../../../assets/zodiacSigns';
 
 export default async function handler(req, res) {
   const {today, yesterday} = getTodayYesterdayTomorrow()
-  const signs = await getJson(yesterday)
+  const signs = await getJson(today)
   
   try {
     for (let sign of signs) {

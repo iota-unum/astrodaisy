@@ -21,8 +21,8 @@ const Card = ({ data}) => {
         <style jsx>
           {`
           .card {
-              width: 300px;
-              height: 400px;
+              width: 600px;
+              height: 800px;
               font-family: Helvetica;
               padding: .7rem;
               font-size: .75rem;
