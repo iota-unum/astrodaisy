@@ -2,11 +2,11 @@
     "crons":[
         {
             "path": "/api/handleImage",
-            "schedule": "12 4 * * * "
+            "schedule": "14 4 * * *"
         },
         {
             "path": "/api/tweet",
-            "schedule": "14 4 * * *"
+            "schedule": "15 4 * * *"
         }
 
 
