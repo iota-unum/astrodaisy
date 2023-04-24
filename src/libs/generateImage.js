@@ -3,6 +3,7 @@
 import Card from '@/components/Card';
 import nodeHtmlToImage from 'node-html-to-image'
 
+process.setMaxListeners(15);
 
 export default async function generateImage(htmlString, signName) {
    
