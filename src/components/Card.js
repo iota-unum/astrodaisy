@@ -1,3 +1,4 @@
+import { getItalianTimestamp } from "@/libs/dates";
 import Head from "next/head";
 import React from "react";
 import { zodiacSigns } from "../../assets/zodiacSigns";
@@ -17,6 +18,7 @@ const Card = ({ data}) => {
           <article className="">
             {horoscope}
           </article>
+          <div className="font-bold p-4 mx-auto timestamp">{getItalianTimestamp()}</div>
         </div>
         <style jsx>
           {`

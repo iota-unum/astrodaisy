@@ -26,6 +26,11 @@ export default async function generateImage(htmlString, signName) {
               line-height: 120%;
               
             }
+            .timestamp {
+              font-weight: bold;
+              margin: 0 auto;
+              padding-top: 15px;
+            }
           </style>
         </head>
         <body>${htmlString}</body>
