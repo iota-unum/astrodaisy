@@ -5,15 +5,21 @@ import { tweetCard } from '@/libs/tweetImage';
 import path from 'path';
 import { zodiacSigns } from '../../../assets/zodiacSigns';
 import generateImage from '@/libs/generateImage';
+import { getTodayYesterdayTomorrow } from '@/libs/dates';
+import { getJson } from '@/libs/getJson';
 
 export default async function handler(req, res) {
+    const {today, yesterday} = getTodayYesterdayTomorrow()
+
+    const signs = await getJson(today)
+
   try {
 
-for (let sign of zodiacSigns){
+for (let sign of signs){
     const htmlString = ReactDOMServer.renderToString(<Card data={sign}/>); 
-    const image = await generateImage(htmlString, sign.name)
+    const image = await generateImage(htmlString, sign.sign)
     console.log('generated IMAGE!')
-    const tweet = await tweetCard(sign.name)
+    const tweet = await tweetCard(sign.sign)
 
     console.log("TWEET SENT!!!", tweet);
 }

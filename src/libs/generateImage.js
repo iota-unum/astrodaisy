@@ -3,7 +3,6 @@
 import Card from '@/components/Card';
 import nodeHtmlToImage from 'node-html-to-image'
 
-process.setMaxListeners(15);
 
 export default async function generateImage(htmlString, signName) {
    
@@ -22,8 +21,8 @@ export default async function generateImage(htmlString, signName) {
               font-family: Helvetica;
               padding: 3rem;
               font-size: 2.5rem;
-              background: #00a8ff;
-              color: white;
+              background: gold;
+              color: #222;
               line-height: 120%;
               
             }
