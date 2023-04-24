@@ -1,12 +1,9 @@
 {
     "crons":[
+      
         {
-            "path": "/api/handleImage",
-            "schedule": "18 5 * * *"
-        },
-        {
-            "path": "/api/tweet",
-            "schedule": "19 5 * * *"
+            "path": "/api/schedule",
+            "schedule": "39 5 * * *"
         }
 
 
