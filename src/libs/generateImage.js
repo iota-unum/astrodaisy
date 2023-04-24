@@ -21,8 +21,8 @@ export default async function generateImage(htmlString, signName) {
               font-family: Helvetica;
               padding: 3rem;
               font-size: 2.5rem;
-              background: gold;
-              color: #222;
+              background: #00a8ff;
+              color: white;
               line-height: 120%;
               
             }

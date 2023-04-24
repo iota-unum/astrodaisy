@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
       }
 
-        res.status(200).json({response:'ciao'})
+        res.status(200).json({response:'immagini generate'})
         
     } catch (error) {
         console.log(error)
