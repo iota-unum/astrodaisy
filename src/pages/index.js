@@ -4,10 +4,14 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import MainLayout from "@/layouts/MainLayout";
 import ListOfSigns from "@/components/ListOfSigns";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export  default  function Home() {
+
+
+  
   return (
     <>
       <Head>
@@ -17,9 +21,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <MainLayout>
+       
         <main className="bg-neutral w-full h-full md:w-2/3 lg:md:1/3 mx-auto flex flex-col items-center">
+
           <h1 className="text-5xl font-bold text-primary-focus mt-4">Oroscopo </h1>
-          <ListOfSigns></ListOfSigns>
+          <div>
+          </div>
           <p className="text-xs p-6 text-base-focus">clicca sul tuo segno</p>
         </main>
       </MainLayout>
