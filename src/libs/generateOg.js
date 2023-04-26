@@ -9,13 +9,12 @@ import path from "path";
 // };
 
 export async function generateOgImg(sign) {
-
   const timestamp = getItalianTimestamp();
   const imagePath = path.join(
     process.cwd(),
     "public",
     "cards",
-   sign.sign + ".png"
+    sign.sign + ".png"
   );
   const image = new ImageResponse(
     (
@@ -39,7 +38,7 @@ export async function generateOgImg(sign) {
             WebkitBackdropFilter: "blur( 10px )",
             borderRadius: "10px",
             border: "1px solid rgba( 255, 255, 255, 0.18 )",
-
+            fontSize: "2rem",
             width: "90%",
             height: "90%",
             padding: "2rem",
