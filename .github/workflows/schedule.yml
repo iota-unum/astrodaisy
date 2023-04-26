@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Call API route
         run: |
-          curl https://astrodaisy.vercel.app/api/tweet
+          curl https://astrodaisy.vercel.app/api/handleImage

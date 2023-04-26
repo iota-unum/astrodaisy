@@ -47,8 +47,10 @@ export async function generateOgImg(sign) {
             flexDirection: "column",
           }}
         >
-          <h1>{sign.sign}</h1>
-          <p>{sign.horoscope}</p>
+          <h1 style={{
+            fontSize:'50px'
+          }} >{sign.sign}</h1>
+          <p >{sign.horoscope}</p>
           <p>{timestamp}</p>
         </div>
       </div>
