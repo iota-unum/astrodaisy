@@ -25,8 +25,7 @@ export  default  function Home() {
         <main className="bg-neutral w-full h-full md:w-2/3 lg:md:1/3 mx-auto flex flex-col items-center">
 
           <h1 className="text-5xl font-bold text-primary-focus mt-4">Oroscopo </h1>
-          <div>
-          </div>
+         <ListOfSigns />
           <p className="text-xs p-6 text-base-focus">clicca sul tuo segno</p>
         </main>
       </MainLayout>
