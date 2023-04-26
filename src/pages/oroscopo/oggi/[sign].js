@@ -24,7 +24,7 @@ export async function getStaticPaths() {
     .map((sign) => ({ params: { sign } }));
   return {
     paths,
-    fallback: blocking,
+    fallback: "blocking"
   };
 }
 
