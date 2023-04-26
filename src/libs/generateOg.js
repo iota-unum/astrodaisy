@@ -32,7 +32,7 @@ export async function generateOgImg(sign) {
       >
         <div
           style={{
-            background: "rgba( 255, 255, 255, 0.1 )",
+            background: "rgba( 255, 255, 255, 0.2 )",
             boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
             backdropFilter: "blur( 10px )",
             WebkitBackdropFilter: "blur( 10px )",
@@ -50,7 +50,9 @@ export async function generateOgImg(sign) {
           <h1 style={{
             fontSize:'50px'
           }} >{sign.sign}</h1>
-          <p >{sign.horoscope}</p>
+          <p style={{
+            fontSize:"20px"
+          }} >{sign.horoscope}</p>
           <p>{timestamp}</p>
         </div>
       </div>

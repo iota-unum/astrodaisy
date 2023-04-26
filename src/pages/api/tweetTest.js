@@ -23,14 +23,15 @@
 // }
 
 import { tweetCard } from '@/libs/tweetImage';
+import { getRandomNumber } from '@/libs/utilities';
 import path from 'path';
 import { zodiacSigns } from '../../../assets/zodiacSigns';
 
 export default async function handler(req, res) {
   try {
+const randomSign = getRandomNumber()
 
-
-    const tweet = await tweetCard(zodiacSigns[11].name)
+    const tweet = await tweetCard(zodiacSigns[randomSign].name)
 
     console.log("TWEET SENT!!!", tweet);
 
