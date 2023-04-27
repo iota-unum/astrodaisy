@@ -1,0 +1,21 @@
+name: Schedule
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Runs every 2 hours
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API route
+        run: |
+          curl https://astrodaisy.vercel.app/api/tweetTest
+
+  redeploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Vercel deployment
+        run: |
+          curl -X POST "$REDEPLOY"

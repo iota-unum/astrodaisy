@@ -25,13 +25,7 @@ const Horoscope = ({ params, data }) => {
   console.log("base", baseLink + sign);
   const signIcon = zodiacSigns.filter((z) => z.name === sign)[0].icon;
   const { horoscope, date } = data[0];
-  // console.log(date);
-  // console.log(formatItalianDate(date));
-  // console.log("dashes", formatColonsToJsDashes(date));
-  // const jsString = formatColonsToJsDashes(date);
-  // console.log("add", addOneDay(jsString));
-  // console.log("NOW", getNowDateStr());
-  // console.log(getTodayYesterdayTomorrow(date));
+
   return (
     <>
       <Head>
