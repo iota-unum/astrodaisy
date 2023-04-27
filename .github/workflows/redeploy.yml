@@ -13,4 +13,3 @@ jobs:
           REDEPLOY: ${{ secrets.REDEPLOY }}
         run: |
           curl -X POST "$REDEPLOY"
-
