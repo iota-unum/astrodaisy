@@ -63,6 +63,7 @@ const Horoscope = ({ params, data }) => {
             <div className="flex flex-col  bg-base-300 w-2/12 justify-start pt-[5%] gap-2 h-full">
               {zodiacSigns.map((z) => (
                 <Link
+                key = {z.name}
                   href={baseLink + z.name}
                   className={`fill-current w-2/3 sm:w-1/2 md:w-5/12 mx-auto ${
                     z.name === sign

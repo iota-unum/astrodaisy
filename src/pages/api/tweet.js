@@ -29,10 +29,10 @@ import { zodiacSigns } from '../../../assets/zodiacSigns';
 export default async function handler(req, res) {
   try {
 
-for (let sign of zodiacSigns){
-    const tweet = await tweetCard(sign.name)
-
-    console.log("TWEET SENT!!!", tweet);
+  
+  for (let sign of zodiacSigns){
+  await fetch(`http://localhost:3000/api/singleTweet?sign=${sign.name}`);
+    console.log("TWEET SENT!!! for " + sign.name);
 }
    
 
