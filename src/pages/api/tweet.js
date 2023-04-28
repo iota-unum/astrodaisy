@@ -31,7 +31,7 @@ export default async function handler(req, res) {
 
   
   for (let sign of zodiacSigns){
-  await fetch(`http://localhost:3000/api/singleTweet?sign=${sign.name}`);
+  await fetch(`https://astrodaisy.vercel.app/api/singleTweet?sign=${sign.name}`);
     console.log("TWEET SENT!!! for " + sign.name);
 }
    

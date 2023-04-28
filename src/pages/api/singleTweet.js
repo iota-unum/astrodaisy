@@ -6,18 +6,19 @@ import { zodiacSigns } from '../../../assets/zodiacSigns';
 export default async function handler(req, res) {
 
     // const {sign} = req.query
-    const sign = 'sagittario'
+    const sign = 'gemelli'
+    console.log(process.env.PWD)
   try {
 
     const tweet = await tweetCard(sign)
 
-    console.log("TWEET SENT!!!", tweet);
+    console.log("TWEET SENT!!!", TWEET);
 
    
 
     
 
-    res.status(200).json({ res: "all tweets sent!",  tweet});
+    res.status(200).json({ res: "all tweets sent!",   });
   } catch (error) {
     console.log(error);
     res.status(400).json({ error });
