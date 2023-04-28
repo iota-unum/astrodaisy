@@ -5,8 +5,8 @@ import { zodiacSigns } from '../../../assets/zodiacSigns';
 
 export default async function handler(req, res) {
 
-    // const {sign} = req.query
-    const sign = 'gemelli'
+    const {sign} = req.query
+    // const sign = 'gemelli'
     console.log(process.env.PWD)
   try {
 
