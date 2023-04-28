@@ -27,11 +27,12 @@ import path from 'path';
 import { zodiacSigns } from '../../../assets/zodiacSigns';
 
 export default async function handler(req, res) {
+  const address = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://astrodaisy.vercel.app'
   try {
 
   
   for (let sign of zodiacSigns){
-  await fetch(`https://astrodaisy.vercel.app/api/singleTweet?sign=${sign.name}`);
+  await fetch(`${address}/api/singleTweet?sign=${sign.name}`);
     console.log("TWEET SENT!!! for " + sign.name);
 }
    
