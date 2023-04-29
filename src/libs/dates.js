@@ -96,4 +96,24 @@ export function formatItalianDate(dateStr) {
     const second = now.getSeconds().toString().padStart(2, '0');
     return `${day} ${hour}:${minute}:${second}`;
   }
+
+
+
+  export function getFormattedDate(daysOfDifference = 0){
+    //daysOfDifference set 0 for today +1 for tomorrow -1 for yesterday -2 2days ago
+
+    // const difference = chooseDay === "tomorrow"  ? 1 : chooseDay === 'yesterday' ? -1 : 0
+
+    const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Rome' });
+    const today = new Date(now)
+   const chosenDay = new Date(today)
+   chosenDay.setDate(chosenDay.getDate() + daysOfDifference)
+    const year = chosenDay.getFullYear();
+    const month = (chosenDay.getMonth() + 1).toString().padStart(2, '0'); // pad with leading zero if less than 10
+    const day = chosenDay.getDate().toString().padStart(2, '0'); // pad with leading zero if less than 10
+    
+    const colons = `${year}:${month}:${day}:12:00`; // e.g. "2021-05-14"
+   const dashes = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-12-00`;
+    return {dateColons:colons,dateDashes: dashes}
+}
   

@@ -1,10 +1,8 @@
 import React from "react";
-import { useRouter } from "next/router";
 import { zodiacSigns } from "../../../../assets/zodiacSigns";
-import MainLayout from "@/layouts/MainLayout";
 import Horoscope from '../../../components/Horoscope'
-import { getTodayYesterdayTomorrow } from "@/libs/dates";
-import { getJson } from "@/libs/getJson";
+import { getFormattedDate } from "@/libs/dates";
+import { getDataFromDB } from "@/libs/getDataFromDB";
 
 const tomorrowPage = ({params, data}) => {
   return (
@@ -25,15 +23,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const {tomorrow} = getTodayYesterdayTomorrow()
-  console.log('today', tomorrow)
-    const data = getJson(tomorrow).filter(s =>(s.sign === params.sign))
-    return {
-      props: { params, data},
-      revalidate: 60*60,
 
+  const dayDateString = getFormattedDate(+1).dateDashes
+    const allData = await  getDataFromDB(dayDateString)
+    const signData = allData[0].horoscopes.filter(s => s.sign === params.sign)
+    return {
+      props: { params, data:signData}, 
+      revalidate: 60*60,
     };
-}
+  }
 
 
 

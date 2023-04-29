@@ -4,12 +4,13 @@ import { zodiacSigns } from "../../../../assets/zodiacSigns";
 import MainLayout from "@/layouts/MainLayout";
 import Horoscope from '../../../components/Horoscope'
 import Head from "next/head";
-import { getJson } from "@/libs/getJson";
-import { getTodayYesterdayTomorrow } from "@/libs/dates";
+// import { getJson } from "@/libs/getJson";
+import { getFormattedDate, getTodayYesterdayTomorrow } from "@/libs/dates";
+import { getDataFromDB } from "@/libs/getDataFromDB";
 const todayPage = ({params, data}) => {
   return ( <>
 
- 
+ {/* <div> {JSON.stringify(data, null, 4)} </div> */}
   
   <Horoscope params={params} data={data}></Horoscope>
   </>
@@ -29,11 +30,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-const {today} = getTodayYesterdayTomorrow()
-console.log('today', today)
-  const data = getJson(today).filter(s =>(s.sign === params.sign))
+
+const dayDateString = getFormattedDate(0).dateDashes
+  const allData = await  getDataFromDB(dayDateString)
+  const signData = allData[0].horoscopes.filter(s => s.sign === params.sign)
   return {
-    props: { params, data}, 
+    props: { params, data:signData}, 
     revalidate: 60*60,
   };
 }
