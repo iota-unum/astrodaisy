@@ -9,7 +9,7 @@ const tomorrowPage = ({params, data}) => {
    <Horoscope params={params} data={data}></Horoscope>
   )
 }
-
+//fake commment
 export default tomorrowPage
 
 export async function getStaticPaths() {
