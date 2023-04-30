@@ -37,7 +37,6 @@ const signData = await getDataBySign(sign, dayDateString)
  
   return {
     props: { params, data:signData}, 
-    revalidate: 60*60,
   };
 }
 
