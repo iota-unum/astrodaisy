@@ -2,7 +2,7 @@ import React from "react";
 import { zodiacSigns } from "../../../../assets/zodiacSigns";
 import Horoscope from '../../../components/Horoscope'
 import { getFormattedDate } from "@/libs/dates";
-import { getDataFromDB } from "@/libs/getDataFromDB";
+import { getDataBySign } from "@/libs/getDataFromDB";
 
 const tomorrowPage = ({params, data}) => {
   return (
@@ -25,8 +25,8 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 
   const dayDateString = getFormattedDate(+1).dateDashes
-    const allData = await  getDataFromDB(dayDateString)
-    const signData = allData[0].horoscopes.filter(s => s.sign === params.sign)
+  const sign = params.sign
+const signData = await getDataBySign(sign, dayDateString)
     return {
       props: { params, data:signData}, 
       revalidate: 60*60,
