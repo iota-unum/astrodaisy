@@ -13,3 +13,4 @@ export async function tweetCard(sign) {
 
   return newTweet;
 }
+console.log('tweet image')

@@ -15,7 +15,6 @@ import {
 const Horoscope = ({ params, data }) => {
   console.log("PARAMS", params);
   const pathName = useRouter().pathname;
-  const router = useRouter();
   const baseLink = pathName.replace("[sign]", "");
 
   const tabs = ["ieri", "oggi", "domani"];
