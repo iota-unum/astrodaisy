@@ -61,7 +61,6 @@ export function formatItalianDate(dateStr) {
     return dateStr;
   }
   
-  //nothing
   // export function getNowDateStr() {
   //   const now = new Date();
   //   const options = { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' };
